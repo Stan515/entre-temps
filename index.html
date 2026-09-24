@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111827" />
+  <meta name="description" content="ENTRE-TEMPS transforme vos temps d'attente en expériences utiles et interactives." />
+  <title>ENTRE-TEMPS — Transformez votre temps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-go="home" aria-label="Retour à l'accueil"><span class="brand-mark">✦</span> ENTRE-TEMPS</button>
+      <button class="passport-link" data-go="passport"><span>◈</span> <span class="passport-label">Passeport</span></button>
+    </header>
+
+    <main>
+      <section id="home" class="screen active home-screen">
+        <div class="eyebrow">VOTRE TEMPS EST PRÉCIEUX</div>
+        <h1>Et si votre attente<br /><em>devenait une aventure ?</em></h1>
+        <p class="lead">Transformez chaque temps mort en une expérience qui vous ressemble.</p>
+        <div class="time-panel panel">
+          <div class="panel-title-row"><h2>Combien de temps avez-vous ?</h2><span class="clock">◷</span></div>
+          <div class="duration-grid">
+            <button class="duration-choice" data-duration="5"><strong>5</strong><span>min</span></button>
+            <button class="duration-choice" data-duration="10"><strong>10</strong><span>min</span></button>
+            <button class="duration-choice" data-duration="20"><strong>20</strong><span>min</span></button>
+            <button class="duration-choice" data-duration="30"><strong>30</strong><span>min</span></button>
+            <button class="duration-choice" data-duration="45"><strong>45</strong><span>min</span></button>
+            <button class="duration-choice" data-duration="60"><strong>1</strong><span>heure +</span></button>
+          </div>
+          <div class="custom-time"><label for="custom-duration">Ou indiquez votre durée</label><div class="custom-input"><input id="custom-duration" type="number" min="1" max="180" placeholder="27" /><span>minutes</span><button id="custom-submit" aria-label="Valider la durée">→</button></div></div>
+        </div>
+        <div class="home-footer"><span>✦</span> Une expérience conçue pour votre moment présent</div>
+      </section>
+
+      <section id="category" class="screen">
+        <button class="back-button" data-go="home">← Retour</button>
+        <div class="step-label">ÉTAPE 01 <span></span> {duration} MINUTES DEVANT VOUS</div>
+        <h1>Que souhaitez-vous<br /><em>faire de ce temps ?</em></h1>
+        <p class="lead">Choisissez une direction. Nous nous occupons du voyage.</p>
+        <div class="category-grid">
+          <button class="category-card featured" data-category="learn"><span class="category-icon">✦</span><span><b>Apprendre</b><small>Élargir vos horizons</small></span><i>→</i></button>
+          <button class="category-card disabled"><span class="category-icon">◌</span><span><b>Découvrir</b><small>Explorer le monde</small></span><i>→</i><label>BIENTÔT</label></button>
+          <button class="category-card disabled"><span class="category-icon">♢</span><span><b>Jouer</b><small>Stimuler votre esprit</small></span><i>→</i><label>BIENTÔT</label></button>
+          <button class="category-card disabled"><span class="category-icon">⌁</span><span><b>Réfléchir</b><small>Prendre du recul</small></span><i>→</i><label>BIENTÔT</label></button>
+          <button class="category-card disabled"><span class="category-icon">✎</span><span><b>Créer</b><small>Faire émerger une idée</small></span><i>→</i><label>BIENTÔT</label></button>
+          <button class="category-card disabled"><span class="category-icon">☾</span><span><b>Se détendre</b><small>Respirer autrement</small></span><i>→</i><label>BIENTÔT</label></button>
+        </div>
+      </section>
+
+      <section id="topics" class="screen">
+        <button class="back-button" data-go="category">← Retour</button>
+        <div class="step-label">ÉTAPE 02 <span></span> APPRENDRE</div>
+        <h1>Quel sujet vous<br /><em>appelle aujourd'hui ?</em></h1>
+        <p class="lead">Une curiosité suffit pour commencer.</p>
+        <div class="topic-grid">
+          <button class="topic-card selected" data-topic="ai"><span>✦</span><b>Intelligence<br />artificielle</b><small>Le futur, maintenant</small><i>→</i></button>
+          <button class="topic-card" data-topic="science"><span>✧</span><b>Sciences</b><small>Comprendre le vivant</small><i>→</i></button>
+          <button class="topic-card" data-topic="history"><span>◉</span><b>Histoire</b><small>Les idées qui ont changé le monde</small><i>→</i></button>
+          <button class="topic-card" data-topic="tech"><span>⌘</span><b>Technologie</b><small>Les coulisses du quotidien</small><i>→</i></button>
+          <button class="topic-card" data-topic="psychology"><span>◒</span><b>Psychologie</b><small>Décoder l'esprit humain</small><i>→</i></button>
+          <button class="topic-card" data-topic="environment"><span>♧</span><b>Environnement</b><small>Notre planète autrement</small><i>→</i></button>
+        </div>
+        <button id="start-mission" class="primary-button wide">Commencer la mission <span>→</span></button>
+      </section>
+
+      <section id="mission" class="screen mission-screen">
+        <div class="mission-head"><button class="back-button" data-go="topics">← Quitter</button><div class="mission-timer"><span class="live-dot"></span><span id="timer">00:00</span> restantes</div></div>
+        <div class="mission-meta"><div><div class="eyebrow">MISSION <span id="mission-number">01</span> / 04</div><h1 id="mission-title">Les machines peuvent-elles penser ?</h1></div><div class="progress-wrap"><span id="progress-text">1 / 4</span><div class="progress-bar"><span id="progress-bar-fill"></span></div></div></div>
+        <div class="mission-card panel"><div class="mission-tag" id="mission-tag">MISE EN SITUATION</div><h2 id="question-title">Une intelligence artificielle vient de vous répondre. À votre avis, que fait-elle réellement ?</h2><div id="answers" class="answers"></div><div id="explanation" class="explanation hidden"><div class="explanation-icon">✦</div><div><b>À retenir</b><p id="explanation-text"></p></div></div><button id="continue-mission" class="primary-button" disabled>Valider ma réponse <span>→</span></button></div>
+      </section>
+
+      <section id="complete" class="screen complete-screen"><div class="complete-symbol">✦</div><div class="eyebrow">MISSION ACCOMPLIE</div><h1>Vous venez de rendre<br /><em>votre temps utile.</em></h1><p class="lead" id="complete-intro">Les bases de l'intelligence artificielle n'ont plus de secret pour vous.</p><div class="recap panel"><div><span class="recap-icon">◷</span><b id="spent-time">10 min</b><small>Temps exploré</small></div><div><span class="recap-icon">✦</span><b>+1</b><small>Nouvelle connaissance</small></div><div><span class="recap-icon">◈</span><b id="completed-count">1</b><small>Mission terminée</small></div></div><button class="primary-button wide" data-go="topics">Vivre une autre expérience <span>→</span></button><button class="text-button" data-go="passport">Voir mon passeport de connaissances</button></section>
+
+      <section id="passport" class="screen passport-screen"><button class="back-button" data-go="home">← Accueil</button><div class="eyebrow">VOTRE PASSEPORT</div><h1>Votre curiosité<br /><em>prend forme.</em></h1><p class="lead">Chaque mission laisse une trace. Pas de notes, juste des chemins explorés.</p><div class="passport-hero panel"><div class="passport-orb">✦</div><div><span class="eyebrow">EXPLORATEUR CURIEUX</span><h2 id="passport-total">1 connaissance explorée</h2><p>Continuez à suivre vos curiosités.</p></div></div><h3 class="section-title">Domaines explorés</h3><div class="domains"><div class="domain active"><span>✦</span><b>Intelligence artificielle</b><small>1 mission</small></div><div class="domain empty"><span>＋</span><b>Votre prochain domaine</b><small>À découvrir</small></div></div></section>
+    </main>
+    <footer><span>ENTRE-TEMPS</span><span>Votre temps. Votre aventure.</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
